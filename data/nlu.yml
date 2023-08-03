@@ -16,6 +16,7 @@ nlu:
     - goodmorning
     - goodevening
     - good afternoon
+    - greet_mnnit_bites
 
 - intent: goodbye
   examples: |
@@ -124,3 +125,12 @@ nlu:
     - I want to order food
     - What is 2 + 2?
     - Who's the US President?
+
+- intent: greet_mnnit_bites
+  examples:  |
+    - welcome to mnnit_bites.How can i help you?
+    - Hello and welcome to MNNIT_Bites! How can I assist you today?
+    - Greetings! You've reached MNNIT_Bites. How may I help you?
+    - Welcome to MNNIT_Bites, where delightful bites await! What can I do for you?
+    - Hi there! Thanks for choosing MNNIT_Bites. How may I be of service?
+    - Good day! You've landed at MNNIT_Bites. How can I make your day tastier?
