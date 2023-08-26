@@ -3,134 +3,128 @@ version: "2.0"
 nlu:
 - intent: greet
   examples: |
-    - hey
     - hello
     - hi
-    - hello there
-    - good morning
-    - good evening
-    - moin
+    - hey
     - hey there
-    - let's go
-    - hey dude
-    - goodmorning
-    - goodevening
-    - good afternoon
-    - greet_mnnit_bites
 
 - intent: goodbye
   examples: |
-    - good afternoon
-    - cu
-    - good by
-    - cee you later
-    - good night
-    - bye
     - goodbye
-    - have a nice day
-    - see you around
-    - bye bye
+    - bye
     - see you later
+    - take care
 
-- intent: affirm
-  examples: |
-    - yes
-    - y
-    - indeed
-    - of course
-    - that sounds good
-    - correct
-
-- intent: deny
-  examples: |
-    - no
-    - n
-    - never
-    - I don't think so
-    - don't like that
-    - no way
-    - not really
-
-- intent: mood_great
-  examples: |
-    - perfect
-    - great
-    - amazing
-    - feeling like a king
-    - wonderful
-    - I am feeling very good
-    - I am great
-    - I am amazing
-    - I am going to save the world
-    - super stoked
-    - extremely good
-    - so so perfect
-    - so good
-    - so perfect
-
-- intent: mood_unhappy
-  examples: |
-    - my day was horrible
-    - I am sad
-    - I don't feel very well
-    - I am disappointed
-    - super sad
-    - I'm so sad
-    - sad
-    - very sad
-    - unhappy
-    - not good
-    - not very good
-    - extremly sad
-    - so saad
-    - so sad
-
-- intent: bot_challenge
-  examples: |
-    - are you a bot?
-    - are you a human?
-    - am I talking to a bot?
-    - am I talking to a human?
-
-- intent: tell_name
-  examples: |
-   - what is your name?
-   - what people used to call you?
-   
-
-- intent: my_name
-  examples:  |
-    - my name is [devanshi]{"entity": "name","value":"devanshi"}
-    - my name is [devu]{"entity": "name","value":"devu"}
-    - my name is [devansh]{"entity": "name","value":"devansh"}
-    - [devanshi]{"entity":"name","value":"devanshi"} this side
-    - [devansh]{"entity":"name","value":"devansh"} is my name
-    - people call me [devu]{"entity":"name","value":"devu"}
-
-- intent: mobile_number
-  examples: |
-    - [7081839153] {"entity": "number" }
-    - [7081839153] {"entity": "number"} is my number
-    - my number is [7081839153]{"entity": "number"}
-
-- intent: play_video
-  examples: |
-    - play the mentioned video
-    - open the url
-    - open the link in browser
-    - show me the video that i asked for
-
-- intent: out_of_scope
+- intent: order_food
   examples: |
     - I want to order food
-    - What is 2 + 2?
-    - Who's the US President?
+    - Can I place an order?
+    - How do I order food?
+    - I'm hungry, what can I order?
 
-- intent: greet_mnnit_bites
-  examples:  |
-    - welcome to mnnit_bites.How can i help you?
-    - Hello and welcome to MNNIT_Bites! How can I assist you today?
-    - Greetings! You've reached MNNIT_Bites. How may I help you?
-    - Welcome to MNNIT_Bites, where delightful bites await! What can I do for you?
-    - Hi there! Thanks for choosing MNNIT_Bites. How may I be of service?
-    - Good day! You've landed at MNNIT_Bites. How can I make your day tastier?
+- intent: menu
+  examples: |
+    - What's on the menu?
+    - Show me the menu
+    - What can I eat?
+    - Any food suggestions?
+
+- intent: inquire_opening_hours
+  examples: |
+    - When do you open?
+    - What are your opening hours?
+    - What time can I order?
+    - Are you currently open?
+
+- intent: ask_delivery_options
+  examples: |
+    - Do you offer delivery?
+    - Can I get food delivered?
+    - How does your delivery work?
+    - Is there a delivery fee?
+
+#- intent: provide_location
+#  examples: |
+#    - I am at [teliyarganj](location)
+#    - My address is [teliyarganj](location)
+#    - Deliver to [teliyarganj](location)
+  
+- intent: thank
+  examples: |
+    - Thank you
+    - Thanks a lot
+    - Appreciate it
+    - Thanks for your help
+
+- intent: ask_contact_info
+  examples: |
+    - What's your contact number?
+    - How can I contact you?
+    - Do you have a phone number?
+    - How do I reach you?
+
+- intent: canteen_option_north
+  examples: |
+    - What's available at the North Canteen?
+    - Tell me about the North Canteen menu
+    - Food options at the North Canteen
+    - What can I get at the North Canteen?
+
+- intent: canteen_option_south
+  examples: |
+    - What's on the menu at the South Canteen?
+    - South Canteen food choices
+    - Tell me about the South Canteen offerings
+    - Can I order from the South Canteen?
+
+- intent: canteen_option_east
+  examples: |
+    - What's available at the East Canteen?
+    - East Canteen menu details
+    - What can I eat at the East Canteen?
+    - Tell me about the East Canteen food
+
+- intent: canteen_option_west
+  examples: |
+    - What's on the menu at the West Canteen?
+    - West Canteen food options
+    - Can I get something from the West Canteen?
+    - Tell me about the West Canteen offerings
+
+
+
+- intent: choose_canteen
+  examples: |
+    - I want to order from [north canteen] {"entity": "canteen_name",  "value": "north canteen"}
+    - Let's go with the [South Canteen]{"entity": "canteen_name", "value": "south canteen"}
+    - [East Canteen] {"entity": "canteen_name", "value": "south canteen"} good to me
+    - I choose the [West Canteen]{"entity": "canteen_name", "value": "west canteen"}
+    - [north canteen]{"entity": "canteen_name", "value": "north canteen"}
+    - [south canteen]{"entity": "canteen_name", "value": "south canteen"}
+    - [west canteen]{"entity": "canteen_name", "value": "west canteen"}
+    - [east canteen]{"entity": "canteen_name", "value": "east canteen"}
+   
+- intent: choose_item
+    examples: |
+      - I want to order [samosa](item)
+      - Add [choumeen samosa](item) to my order
+      - Can I get [Aloo tikki](item) with that?
+      - I want to order [bread pakoda](item)
+      - Add [chola samosa](item) to my order
+      - Can I get [khassta kachaudi](item) with that?      
+      - I want to order [bun makkhan](item)
+      - Add [bread omelet](item) to my order
+      - Can I get [pav bhaji](item) with that?    
+      - I want to order [half fry 2 eggs](item)
+      - Add [full fry 2 eggs](item) to my order
+      - Can I get [boil eggs](item) with that?    
+
+- intent: quantity
+    examples: |
+       - [1](quantity)
+       - [2](quantity)
+       - [3](quantity)
+       - [4](quantity)
+       - [5](quantity)
+       - [6](quantity)
+       - [7](quantity)
