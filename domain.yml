@@ -3,81 +3,113 @@ version: "2.0"
 intents:
   - greet
   - goodbye
-  - affirm
-  - deny
-  - mood_great
-  - mood_unhappy
-  - bot_challenge
-  - tell_name
-  - play_video
-  - out_of_scope
-  - greet_mnnit_bites
-  - my_name:
-      use_entities:
-        - name 
-  - mobile_number:
-      use_entities:
-        - number
+  - order_food
+  - menu
+  - inquire_opening_hours
+  - ask_delivery_options
+  - thank
+  - ask_contact_info
+  - canteen_option_south
+  - canteen_option_north
+  - canteen_option_east
+  - canteen_option_west
+  - ask_canteen_to_order
+  - choose_canteen
+  - choose_item
 
 entities:
-  - name
-  - number
+  #- location
+  - canteen_name
+  - item
+  - qantity
 
+# slots:
+#   - canteen:
+#     type: text
+#     influence_conversation_false
+#     mapping:
+#     - type: from_entity
+#       entity: canteen
+#   - item
+#   type: text
+#     influence_conversation_false
+#     mapping:
+#     - type: from_entity
+#       entity: item
 slots:
-  name:
+  canteen_name:
     type: text
-  number:
+  
+  item:
     type: text
+
+  quantity:
+    type: text
+actions:
+  - action_hello_world
+  - utter_choose_canteen_confirmation
+  - action_show_menu
+
 
 responses:
   utter_greet:
-  - text: "Hey! How are you?"
+    - text: "Hello! Welcome to MNNIT Bites. How can I assist you today?"
 
-  utter_cheer_up:
-  - text: "Here is something to cheer you up:"
-    image: "https://i.imgur.com/nGF1K8f.jpg"
+  utter_goodbye:
+    - text: "Goodbye! Have a great day."
 
-  utter_did_that_help:
-  - text: "Did that help you?"
+  utter_order_food:
+    - text: "Sure, I can help you order delicious food."
 
-  utter_happy:
-  - text: "Great, carry on!"
+  utter_menu:
+    - text: "Here's the menu for our food offerings. What can I get for you?"
 
-  utter_goodbye: 
-  - text: "Bye"
+  utter_inquire_opening_hours:
+    - text: "Our opening hours are [Opening hours]. Feel free to place your order during these times."
 
-  utter_iamabot:
-  - text: "I am a bot, powered by Rasa."
+  utter_ask_delivery_options:
+    - text: "Yes, we offer delivery services. You can get food delivered right to your doorstep."
 
-  utter_name:
-  - text: " my name is Mnnit Bites"
+  utter_provide_location:
+    - text: "Please provide your delivery location or address so we can ensure a timely delivery."
 
-  utter_ask_name:
-  - text: "what is your name?"
+  utter_thank:
+    - text: "You're welcome! If you need anything else, feel free to ask."
 
-  utter_ask_number:
-  - text: "what is your mobile number?"
+  utter_ask_contact_info:
+    - text: "You can reach us at [Contact number]. Feel free to call for any assistance."
 
-  utter_thanks:
-  - text: Thanks for providing the values.
+  utter_canteen_option_south:
+    - text: "The South Canteen offers a variety of delicious food options. What would you like from there?"
 
-  utter_details_thanks:
-  - text: "Thanks for providing the given details \nName: {Name},\nMobile Number: {Mobile_number}"
+  utter_canteen_option_north:
+    - text: "At the North Canteen, you'll find a diverse range of dishes. What can I help you order?"
 
-  utter_out_of_scope:
-  - text: Sorry, I didn't get what you said. Please rephrase what you said.
-actions:
-  - action_submit
-  - action_video
-forms:
-  user_details_form:
-    name:
-      - type: from_entity
-        entity: name
-    number:
-      - type: from_entity
-        entity: number
- 
+  utter_canteen_option_east:
+    - text: "The East Canteen has a great selection of food. What would you like to have from there?"
+
+  utter_canteen_option_west:
+    - text: "The West Canteen offers tasty food options. What can I assist you in ordering?"
+  
+  utter_ask_canteen_to_order:
+    - text: "Sure! You can order food from the following canteens: North Canteen, South Canteen, East Canteen, and West Canteen. Which one would you like to choose?"
+
+  utter_choose_canteen_confirmation:
+    - text: "Great choice! You've chosen the {choosen canteen} Canteen for your order."
+  
+  utter_ask_canteen:
+    - text: "Which canteen do you choose to order from?
+             1) north canteen  2) south canteen   3) west canteen    4) east canteen"
+
+  utter_show_menu:
+    - text: "Here's the menu for {chosen_canteen}:\n{menu}"
+  
+  utter_ask_quantiy:
+   - text: "how many {item} you want to order"
+
+  utter_confirm_order:
+  - text: "your order is {item} and quantity {quantity}"
+
 
 session_config:
   session_expiration_time: 60
